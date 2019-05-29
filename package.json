@@ -1,0 +1,12 @@
+{
+  "name": "arterys-code-challenge",
+  "version": "0.0.1",
+  "description": "Solution to the Arterys Texas Hold'em programming challenge",
+  "main": "node/index.js",
+  "repository": "https://github.com/alexanderbird/arterys-code-challenge.git",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "author": "Alexander Bird",
+  "license": "UNLICENSED"
+}
