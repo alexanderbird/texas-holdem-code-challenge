@@ -8,5 +8,8 @@
     "test": "jasmine"
   },
   "author": "Alexander Bird",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "jasmine": "^3.4.0"
+  }
 }
