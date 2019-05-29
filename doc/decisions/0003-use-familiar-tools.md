@@ -10,6 +10,8 @@ Relates to [2. Use Node.js](0002-use-node-js.md)
 
 Leads to [4. Use Jasmine for unit testing](0004-use-jasmine-for-unit-testing.md)
 
+Leads to [6. Use ESLint for linting](0006-use-eslint-for-linting.md)
+
 ## Context
 
 As described in [2. Use Node.js](0002-use-node-js.md), the goal is to make

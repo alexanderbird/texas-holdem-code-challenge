@@ -5,11 +5,17 @@
   "main": "node/index.js",
   "repository": "https://github.com/alexanderbird/arterys-code-challenge.git",
   "scripts": {
-    "test": "jasmine --config=spec/support/jasmine.json"
+    "test": "jasmine --config=spec/support/jasmine.json",
+    "lint": "eslint src",
+    "check": "run-p test lint",
+    "watch": "nodemon"
   },
   "author": "Alexander Bird",
   "license": "UNLICENSED",
   "devDependencies": {
-    "jasmine": "^3.4.0"
+    "eslint": "^5.16.0",
+    "jasmine": "^3.4.0",
+    "nodemon": "^1.19.1",
+    "npm-run-all": "^4.1.5"
   }
 }
