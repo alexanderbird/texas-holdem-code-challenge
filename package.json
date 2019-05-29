@@ -5,7 +5,7 @@
   "main": "node/index.js",
   "repository": "https://github.com/alexanderbird/arterys-code-challenge.git",
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine --config=spec/support/jasmine.json"
   },
   "author": "Alexander Bird",
   "license": "UNLICENSED",
