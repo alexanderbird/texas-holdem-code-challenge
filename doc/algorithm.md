@@ -1,16 +1,17 @@
 # Algorithm
 
-*Refer to ./model.md for definitions of the classes (in bold)*
+*Refer to src/model.ts for definitions of the types (in bold)*
 
- - Prepare an empty list for **GameRank**s
+ - Prepare an empty list for **PlayerScore**s
  - For each **Person**
     - Generate all 21 possible **Hand**s
-    - Prepare an empty list for **HandSummary** objects
+    - Prepare an empty list for **HandScore** objects
     - For each of the **Hand**s
        - For each of the 10 **HandType**s
           - Check the **Hand** to see if it meets the **HandType**'s **requirement**
-          - If it matches, add the resulting **HandSummary** to the list of **HandSummary** objects
-    - Sort the **HandSummary** list based on the **greaterThan** rule for the **HandSummary**
-    - Add a new **GameRank** entry (with the **Person** and best scoring **HandSummary**) to the list of **GameRank**s
- - Sort the **GameRank**s by the **greaterThan** rule for the **GameRank**'s
-   **HandSummary**
+          - If it matches, add the resulting **HandScore** to the list of **HandScore** objects
+    - Sort the **HandScore** list based on the **compareTo** rule for the **HandScore**
+    - Add a new **PlayerScore** entry (with the **Person** and best scoring **HandScore**) to the list of **PlayerScore**s
+ - Sort the **PlayerScore**s by the **compareTo** rule for the **PlayerScore**'s
+   **HandScore**
+ - Pretty print the resulting list
