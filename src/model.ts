@@ -1,18 +1,21 @@
 export interface Player {
-  name: string,
+  name: string;
 }
 
 export enum Suit {
-  Hearts,
-  Clubs,
-  Diamonds,
-  Spades,
-};
+  Hearts = 'Hearts',
+  Clubs = 'Clubs',
+  Diamonds = 'Diamonds',
+  Spades = 'Spades',
+}
 
 export interface Card {
   value: number;
-  name: string;
   suit: Suit;
+  // 2 is greater than 1, etc., 1 (Ace) is greater than 13 (King)
+  greaterThan(other: Card): boolean;
+  // e.g. 12 => Queen
+  valueString(): string;
 }
 
 export type Hand = Card[];
@@ -29,7 +32,7 @@ export interface GameBoard {
 
 export interface GeneratePossibleHands {
   // Returns all the possible hands for that player for the given game board
-  (gameBoard: GameBoard, player: Player): Hand[]
+  (gameBoard: GameBoard, player: Player): Hand[];
 }
 
 export interface HandScoreCardPart {
@@ -38,7 +41,7 @@ export interface HandScoreCardPart {
 }
 
 export interface HandRequirement {
-  (hand: Hand): false | HandScoreCardPart
+  (hand: Hand): false | HandScoreCardPart;
 }
 
 export interface HandScore {
@@ -48,6 +51,9 @@ export interface HandScore {
 
   // result must be compatible with Array#sort
   compareTo(other: HandScore): -1 | 0 | 1;
+
+  // based on description and all of cardPart
+  toString(): string;
 }
 
 export interface HandType {
@@ -58,12 +64,22 @@ export interface HandType {
   // with the rank and name. 
   // To generate the HandScore description, HandType will need to use the name
   // property and possibly some combination of keyCards' suits or values.
-  matches(hand: Hand): false | HandScore
+  matches(hand: Hand): false | HandScore;
 }
 
 export interface PlayerScore {
   player: Player;
   score: HandScore;
+  // based on the player name and the score's string representation
+  toString(): string;
+}
+
+export interface ParseGameBoard {
+  (raw: string): GameBoard;
+}
+
+export interface SerializeGameResults {
+  (results: PlayerScore[]): string;
 }
 
 /*
