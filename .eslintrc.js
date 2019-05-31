@@ -24,5 +24,7 @@ module.exports = {
     'semi': [ 'error', 'always' ],
     'comma-dangle': ['error', 'only-multiline'],
     '@typescript-eslint/explicit-function-return-type': false,
+    '@typescript-eslint/no-explicit-any': false,
+    '@typescript-eslint/no-parameter-properties': false,
   }
 };

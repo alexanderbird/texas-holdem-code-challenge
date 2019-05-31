@@ -1,12 +1,6 @@
+import { Suit } from './suit';
 export interface Player {
   name: string;
-}
-
-export enum Suit {
-  Hearts = 'Hearts',
-  Clubs = 'Clubs',
-  Diamonds = 'Diamonds',
-  Spades = 'Spades',
 }
 
 export interface Card {
