@@ -1,8 +1,6 @@
 import * as model from './model';
-import { Deck } from './deck';
+import { club, heart, diamond, spade } from './deck';
 import { parseGameBoard } from './parse-game-board';
-
-const { club, heart, diamond, spade } = Deck;
 
 describe('parseGameBoard', () => {
   it('is assignable to model.ParseGameBoard', () => {

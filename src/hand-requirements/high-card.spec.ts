@@ -1,8 +1,6 @@
 import { HandScoreCardPart } from '../model';
 import { highCard } from './high-card';
-import { Deck } from '../deck';
-
-const { club, heart, diamond, spade } = Deck;
+import { club, heart, diamond, spade } from '../deck';
 
 describe('highCard', () => {
   it('matches the card with the highest value when they are all different', () => {

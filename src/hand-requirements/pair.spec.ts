@@ -1,8 +1,6 @@
 import { HandScoreCardPart } from '../model';
 import { pair } from './pair';
-import { Deck } from '../deck';
-
-const { club, heart, diamond, spade } = Deck;
+import { club, heart, diamond, spade } from '../deck';
 
 describe('pair', () => {
   it('does not match when there is no pair', () => {

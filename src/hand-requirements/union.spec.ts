@@ -1,8 +1,6 @@
 import { union } from './union';
 import { HandRequirement, HandScoreCardPart } from '../model';
-import { Deck } from '../deck';
-
-const { club, heart, diamond, spade } = Deck;
+import { club, heart, diamond, spade } from '../deck';
 
 describe('union', () => {
   let requirement: HandRequirement;

@@ -40,4 +40,4 @@ function generateDeck(): Deck {
   return deck as any as Deck;
 }
 
-export const Deck = generateDeck();
+export const { club, heart, diamond, spade } = generateDeck();
