@@ -22,24 +22,24 @@ export interface GameBoard {
   playerHands: PlayerHand[];
 }
 
-export interface HandScoreCardPart {
+export interface HandClassificationCardPart {
   scoringCards: Hand;
   kicker: Hand;
 }
 
-export type HandMatch = false | HandScoreCardPart;
+export type HandMatch = false | HandClassificationCardPart;
 
 export interface HandRequirement {
   (hand: Hand): HandMatch;
 }
 
-export interface HandScore {
-  cardPart: HandScoreCardPart;
+export interface HandClassification {
+  cardPart: HandClassificationCardPart;
   rank: number;
   description: string;
 
   // result must be compatible with Array#sort
-  compareTo(other: HandScore): -1 | 0 | 1;
+  compareTo(other: HandClassification): -1 | 0 | 1;
 
   // based on description and all of cardPart
   toString(): string;
@@ -49,16 +49,16 @@ export interface HandType {
   name: string;
   rank: number;
   requirement: HandRequirement;
-  // If the hand matches the HandRequirement, augment the HandScoreCardPart
+  // If the hand matches the HandRequirement, augment the HandClassificationCardPart
   // with the rank and name. 
-  // To generate the HandScore description, HandType will need to use the name
+  // To generate the HandClassification description, HandType will need to use the name
   // property and possibly some combination of scoringCards' suits or values.
-  matches(hand: Hand): false | HandScore;
+  matches(hand: Hand): false | HandClassification;
 }
 
 export interface PlayerScore {
   player: Player;
-  score: HandScore;
+  score: HandClassification;
   // based on the player name and the score's string representation
   toString(): string;
 }
