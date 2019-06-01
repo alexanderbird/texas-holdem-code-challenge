@@ -1,7 +1,7 @@
-import { Hand, HandMatch } from '../model';
+import { Hand, PossibleHandMatch } from '../model';
 import { Card } from '../card';
 
-export function four(hand: Hand): HandMatch {
+export function four(hand: Hand): PossibleHandMatch {
   const sortedHand = hand.sort(Card.sortByValue);
   let scoringCard;
   for(let i = 0; i < sortedHand.length - 3; i++) {

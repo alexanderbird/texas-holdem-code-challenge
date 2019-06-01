@@ -1,7 +1,7 @@
-import { Hand, HandMatch, HandRequirement } from '../model';
+import { Hand, PossibleHandMatch, HandRequirement } from '../model';
 
 export function union(first: HandRequirement, second: HandRequirement): HandRequirement {
-  return function(hand: Hand): HandMatch {
+  return function(hand: Hand): PossibleHandMatch {
     const firstMatch = first(hand);
     if(!firstMatch) return false;
     const secondMatch = second(firstMatch.kicker);
