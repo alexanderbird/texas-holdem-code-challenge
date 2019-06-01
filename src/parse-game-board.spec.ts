@@ -32,4 +32,40 @@ describe('parseGameBoard', () => {
       });
     });
   });
+
+  it('parses the first player name and hole cards', () => {
+    const board = parseGameBoard('AC AH AD AS 2C\nJohn 9H 7S');
+    expect(board).toEqual({
+      communityCards: jasmine.any(Array) as any,
+      playerHands: [{
+        player: { name: 'John' },
+        hand: [ heart.nine, spade.seven ],
+      }]
+    });
+  });
+
+  it('parses multiple players', () => {
+    const board = parseGameBoard('AC AH AD AS 2C\nPeter 4D 7D\nSusan 4S 4C\nLucy QH KC\nEdmund 2D AS');
+    expect(board).toEqual({
+      communityCards: jasmine.any(Array) as any,
+      playerHands: [
+        {
+          player: { name: 'Peter' },
+          hand: [ diamond.four, diamond.seven ],
+        },
+        {
+          player: { name: 'Susan' },
+          hand: [ spade.four, club.four ],
+        },
+        {
+          player: { name: 'Lucy' },
+          hand: [ heart.queen, club.king ],
+        },
+        {
+          player: { name: 'Edmund' },
+          hand: [ diamond.two, spade.ace ],
+        },
+      ]
+    });
+  });
 });

@@ -1,4 +1,4 @@
-import { GameBoard } from './model';
+import { GameBoard, PlayerHand } from './model';
 import { Card } from './card';
 import { Suit } from './suit';
 
@@ -21,17 +21,33 @@ function textToSuit(character: string): Suit {
   }[character];
 }
 
-function textToCard(text: string): Card {
+function parseCardText(text: string): Card {
   const value = textToValue(text[0]);
   const suit = textToSuit(text[1]);
   return new Card(suit, value);
 }
 
+function parsePlayerRow(raw: string): PlayerHand {
+  const [
+    name,
+    ...rawCards
+  ] = raw.split(' ');
+  return {
+    player: { name },
+    hand: rawCards.map(parseCardText),
+  };
+}
+
 export function parseGameBoard(raw: string): GameBoard {
-  const communityCards = raw.split(' ').map(textToCard);
+  const [
+    communityRow,
+    ...playerRows
+  ]= raw.split('\n');
+  const communityCards = communityRow.split(' ').map(parseCardText);
+
   return {
     communityCards,
-    playerHands: [],
+    playerHands: playerRows.map(parsePlayerRow),
   };
 }
 
