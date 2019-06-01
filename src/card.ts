@@ -26,4 +26,8 @@ export class Card {
   public toString() {
     return `${this.valueString()} of ${this.suit}`;
   }
+
+  static sortByValue(left: Card, right: Card) {
+    return left.compareTo(right);
+  }
 }

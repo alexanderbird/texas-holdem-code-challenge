@@ -1,7 +1,8 @@
 import { Hand, HandMatch } from '../model';
+import { Card } from '../card';
 
 export function pair(hand: Hand): HandMatch {
-  const sortedHand = hand.sort((left, right) => left.compareTo(right));
+  const sortedHand = hand.sort(Card.sortByValue);
   let keyCard;
   for(let i = 0; i < sortedHand.length - 1; i++) {
     if(sortedHand[i].value === sortedHand[i + 1].value) {
