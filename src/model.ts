@@ -6,9 +6,7 @@ export interface Player {
 export interface Card {
   value: number;
   suit: Suit;
-  // 2 is greater than 1, etc., 1 (Ace) is greater than 13 (King)
-  greaterThan(other: Card): boolean;
-  // e.g. 12 => Queen
+  compareTo(other: Card): -1 | 0 | 1;
   valueString(): string;
 }
 
@@ -29,8 +27,10 @@ export interface HandScoreCardPart {
   kicker: Hand;
 }
 
+export type HandMatch = false | HandScoreCardPart;
+
 export interface HandRequirement {
-  (hand: Hand): false | HandScoreCardPart;
+  (hand: Hand): HandMatch;
 }
 
 export interface HandScore {

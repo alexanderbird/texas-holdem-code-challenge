@@ -5,8 +5,14 @@ export class Card {
     public readonly value: number
   ) {
   }
-  // 2 is greater than 1, etc., 1 (Ace) is greater than 13 (King)
-  public greaterThan(): boolean { return false; }
+
+  public compareTo(other: Card): -1 | 0 | 1 {
+    if(this.value === other.value) return 0;
+    if(this.value === 1) return -1;
+    if(other.value === 1) return 1;
+    if(this.value < other.value) return 1;
+    if(this.value > other.value) return -1;
+  }
   // e.g. 12 => Queen
   public valueString(): string {
     return {

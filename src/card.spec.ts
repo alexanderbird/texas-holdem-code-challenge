@@ -17,4 +17,21 @@ describe('Card', () => {
       expect(card.toString()).toEqual(name);
     });
   });
+
+  describe('greaterThan', () => {
+    [
+      { expected: 1  , left: 3  , right: 4 }  ,
+      { expected: 0  , left: 3  , right: 3 }  ,
+      { expected: -1 , left: 3  , right: 2 }  ,
+      { expected: 0  , left: 1  , right: 1 }  ,
+      { expected: -1 , left: 1  , right: 2 }  ,
+      { expected: -1 , left: 1  , right: 13 } ,
+      { expected: 1  , left: 13 , right: 1 }  ,
+      { expected: 1  , left: 2  , right: 1 }  ,
+    ].forEach(({ expected, left, right }) => it(`returns ${expected} when called on ${left} with argument ${right}`, () => {
+      const leftCard = new Card(Suit.Clubs, left);
+      const rightCard = new Card(Suit.Clubs, right);
+      expect(leftCard.compareTo(rightCard)).toEqual(expected as -1 | 0 | 1);
+    }));
+  });
 });
