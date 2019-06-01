@@ -1,5 +1,5 @@
 import { union } from './union';
-import { HandRequirement, HandClassificationCardPart } from '../model';
+import { HandRequirement, HandMatch } from '../model';
 import { club, heart, diamond, spade } from '../deck';
 
 describe('union', () => {
@@ -30,14 +30,14 @@ describe('union', () => {
   it('returns the scoringCards of the first and second requirements in order', () => {
     first.and.returnValue({ scoringCards: [ spade.king, heart.four ], kicker: [] });
     second.and.returnValue({ scoringCards: [ diamond.ace ], kicker: [] });
-    const match = requirement(dummyHand) as HandClassificationCardPart;
+    const match = requirement(dummyHand) as HandMatch;
     expect(match.scoringCards).toEqual([ spade.king, heart.four, diamond.ace ]);
   });
 
   it('returns the kicker of the second requirement', () => {
     first.and.returnValue({ scoringCards: [ ], kicker: [ club.two ] });
     second.and.returnValue({ scoringCards: [ ], kicker: [ spade.jack, spade.queen ] });
-    const match = requirement(dummyHand) as HandClassificationCardPart;
+    const match = requirement(dummyHand) as HandMatch;
     expect(match.kicker).toEqual([ spade.jack, spade.queen ]);
   });
 

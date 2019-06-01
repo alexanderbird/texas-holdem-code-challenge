@@ -1,4 +1,4 @@
-import { HandClassificationCardPart } from '../model';
+import { HandMatch } from '../model';
 import { twoPair } from './two-pair';
 import { club, heart, diamond, spade } from '../deck';
 
@@ -15,11 +15,11 @@ describe('twoPair', () => {
 
   it('matches the first card of each pair as the scoring cards when there are two pairs', () => {
     const match = twoPair([ club.two, heart.seven, diamond.nine, spade.seven, club.nine ]);
-    expect((match as HandClassificationCardPart).scoringCards).toEqual([ diamond.nine, heart.seven ]);
+    expect((match as HandMatch).scoringCards).toEqual([ diamond.nine, heart.seven ]);
   });
 
   it('matches the fifth card as the kicker when there are two pairs', () => {
     const match = twoPair([ club.two, heart.seven, diamond.nine, spade.seven, club.nine ]);
-    expect((match as HandClassificationCardPart).kicker).toEqual([ club.two ]);
+    expect((match as HandMatch).kicker).toEqual([ club.two ]);
   });
 });

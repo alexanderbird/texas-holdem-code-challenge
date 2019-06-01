@@ -27,7 +27,8 @@ export interface HandClassificationCardPart {
   kicker: Hand;
 }
 
-export type PossibleHandMatch = false | HandClassificationCardPart;
+export type HandMatch = HandClassificationCardPart;
+export type PossibleHandMatch = false | HandMatch;
 
 export interface HandRequirement {
   (hand: Hand): PossibleHandMatch;
