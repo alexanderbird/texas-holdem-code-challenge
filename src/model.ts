@@ -24,11 +24,6 @@ export interface GameBoard {
   playerHands: PlayerHand[];
 }
 
-export interface GeneratePossibleHands {
-  // Returns all the possible hands for that player for the given game board
-  (gameBoard: GameBoard, player: Player): Hand[];
-}
-
 export interface HandScoreCardPart {
   keyCards: Hand;
   kicker: Hand;
