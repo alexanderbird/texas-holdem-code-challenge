@@ -87,16 +87,4 @@ Types of HandRequirements:
     }
     straightFlush   { straight(Hand) && flush(Hand) }
     royalFlush      { straightFlush(Hand) && highCard(Hand).keyCard === Ace }
-
-UnionHandRequirement(first: HandRequirement, second: HandRequirement, name: string): HandRequirement {
-  1. get HandRequirementResult from first
-  2. if false, return false
-  3. get HandRequirementResult from second, passing the kicker in as the Hand
-  4. if false, return false
-  5. return a new HandSummary {
-    handTypeName: name
-    keyCards: keyCards from first and second
-    kicker: kicker from second
-  }
-}
 */
