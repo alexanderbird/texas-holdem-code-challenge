@@ -3,25 +3,25 @@ import { Card } from '../card';
 
 export function three(hand: Hand): HandMatch {
   const sortedHand = hand.sort(Card.sortByValue);
-  let keyCard;
+  let scoringCard;
   for(let i = 0; i < sortedHand.length - 2; i++) {
     const current = sortedHand[i];
     const next = sortedHand[i + 1];
     const afterNext = sortedHand[i + 2];
     if(current.value === next.value && current.value === afterNext.value) {
-      if(!keyCard) {
-        keyCard = current;
+      if(!scoringCard) {
+        scoringCard = current;
       } else {
-        keyCard = current.compareTo(keyCard) ? keyCard : current;
+        scoringCard = current.compareTo(scoringCard) ? scoringCard : current;
       }
       // No need to check the next two, we already know it has the same value as
       // this one
       i += 2;
     }
   }
-  if(!keyCard) return false;
+  if(!scoringCard) return false;
   return {
-    keyCards: [keyCard],
-    kicker: sortedHand.filter(card => card.value !== keyCard.value),
+    scoringCards: [scoringCard],
+    kicker: sortedHand.filter(card => card.value !== scoringCard.value),
   };
 }

@@ -8,9 +8,9 @@ describe('fullHouse', () => {
     expect(match).toEqual(false);
   }); 
 
-  it('matches the top card of the three and the pair as the key cards', () => {
+  it('matches the top card of the three and the pair as the scoring cards', () => {
     const match = fullHouse([ heart.seven, diamond.king, spade.seven, club.seven, club.king ]);
-    expect((match as HandScoreCardPart).keyCards).toEqual([ heart.seven, diamond.king ]);
+    expect((match as HandScoreCardPart).scoringCards).toEqual([ heart.seven, diamond.king ]);
   });
 
   it('has no kicker when it matches', () => {

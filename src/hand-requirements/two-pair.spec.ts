@@ -13,9 +13,9 @@ describe('twoPair', () => {
     expect(match).toEqual(false);
   });
 
-  it('matches the first card of each pair as the key cards when there are two pairs', () => {
+  it('matches the first card of each pair as the scoring cards when there are two pairs', () => {
     const match = twoPair([ club.two, heart.seven, diamond.nine, spade.seven, club.nine ]);
-    expect((match as HandScoreCardPart).keyCards).toEqual([ diamond.nine, heart.seven ]);
+    expect((match as HandScoreCardPart).scoringCards).toEqual([ diamond.nine, heart.seven ]);
   });
 
   it('matches the fifth card as the kicker when there are two pairs', () => {

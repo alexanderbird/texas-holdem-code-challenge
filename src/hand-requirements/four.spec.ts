@@ -10,7 +10,7 @@ describe('four', () => {
 
   it('matches four cards with the same value', () => {
     const match = four([ club.two, heart.four, diamond.two, spade.two, heart.two ]) as HandScoreCardPart;
-    expect(match.keyCards).toEqual([ club.two ]);
+    expect(match.scoringCards).toEqual([ club.two ]);
   });
 
   it('matches the extra cards in descending order as the kicker', () => {

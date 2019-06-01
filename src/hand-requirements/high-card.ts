@@ -5,7 +5,7 @@ export function highCard(hand: Hand): HandMatch {
   const sortedHand = hand.sort(Card.sortByValue);
   const [ high, ...kicker ] = sortedHand;
   return {
-    keyCards: [ high ],
+    scoringCards: [ high ],
     kicker,
   };
 }

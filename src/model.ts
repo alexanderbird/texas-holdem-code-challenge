@@ -23,7 +23,7 @@ export interface GameBoard {
 }
 
 export interface HandScoreCardPart {
-  keyCards: Hand;
+  scoringCards: Hand;
   kicker: Hand;
 }
 
@@ -52,7 +52,7 @@ export interface HandType {
   // If the hand matches the HandRequirement, augment the HandScoreCardPart
   // with the rank and name. 
   // To generate the HandScore description, HandType will need to use the name
-  // property and possibly some combination of keyCards' suits or values.
+  // property and possibly some combination of scoringCards' suits or values.
   matches(hand: Hand): false | HandScore;
 }
 
@@ -86,5 +86,5 @@ Types of HandRequirements:
       when sorted by number, increases in numerical sequence without gaps
     }
     straightFlush   { straight(Hand) && flush(Hand) }
-    royalFlush      { straightFlush(Hand) && highCard(Hand).keyCard === Ace }
+    royalFlush      { straightFlush(Hand) && highCard(Hand).scoringCard === Ace }
 */

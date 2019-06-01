@@ -27,16 +27,16 @@ describe('union', () => {
     expect(requirement(dummyHand)).toEqual(false);
   });
 
-  it('returns the keyCards of the first and second requirements in order', () => {
-    first.and.returnValue({ keyCards: [ spade.king, heart.four ], kicker: [] });
-    second.and.returnValue({ keyCards: [ diamond.ace ], kicker: [] });
+  it('returns the scoringCards of the first and second requirements in order', () => {
+    first.and.returnValue({ scoringCards: [ spade.king, heart.four ], kicker: [] });
+    second.and.returnValue({ scoringCards: [ diamond.ace ], kicker: [] });
     const match = requirement(dummyHand) as HandScoreCardPart;
-    expect(match.keyCards).toEqual([ spade.king, heart.four, diamond.ace ]);
+    expect(match.scoringCards).toEqual([ spade.king, heart.four, diamond.ace ]);
   });
 
   it('returns the kicker of the second requirement', () => {
-    first.and.returnValue({ keyCards: [ ], kicker: [ club.two ] });
-    second.and.returnValue({ keyCards: [ ], kicker: [ spade.jack, spade.queen ] });
+    first.and.returnValue({ scoringCards: [ ], kicker: [ club.two ] });
+    second.and.returnValue({ scoringCards: [ ], kicker: [ spade.jack, spade.queen ] });
     const match = requirement(dummyHand) as HandScoreCardPart;
     expect(match.kicker).toEqual([ spade.jack, spade.queen ]);
   });
@@ -49,7 +49,7 @@ describe('union', () => {
 
   it('passes the kicker of the first requirement as the hand for the second requirement', () => {
     const firstKicker = [ diamond.nine, diamond.ace ];
-    first.and.returnValue({ keyCards: [], kicker: firstKicker });
+    first.and.returnValue({ scoringCards: [], kicker: firstKicker });
     requirement(dummyHand);
     expect(second).toHaveBeenCalledTimes(1);
     expect(second).toHaveBeenCalledWith(firstKicker);

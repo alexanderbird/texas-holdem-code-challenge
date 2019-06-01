@@ -7,7 +7,7 @@ export function union(first: HandRequirement, second: HandRequirement): HandRequ
     const secondMatch = second(firstMatch.kicker);
     if(!secondMatch) return false;
     return {
-      keyCards: [ ...firstMatch.keyCards, ...secondMatch.keyCards ],
+      scoringCards: [ ...firstMatch.scoringCards, ...secondMatch.scoringCards ],
       kicker: [ ...secondMatch.kicker ],
     };
   };

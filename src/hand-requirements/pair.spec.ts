@@ -10,17 +10,17 @@ describe('pair', () => {
 
   it('matches a pair of cards', () => {
     const match = pair([ club.two, heart.four, diamond.four, spade.three, club.five ]) as HandScoreCardPart;
-    expect(match.keyCards).toEqual([heart.four]);
+    expect(match.scoringCards).toEqual([heart.four]);
   });
 
   it('matches the highest valued pair of cards', () => {
     const match = pair([ club.two, heart.two, diamond.four, spade.three, club.three ]) as HandScoreCardPart;
-    expect(match.keyCards).toEqual([spade.three]);
+    expect(match.scoringCards).toEqual([spade.three]);
   });
 
   it('matches a pair of aces given aces and kings', () => {
     const match = pair([ club.ace, heart.two, diamond.ace, spade.king, club.king ]) as HandScoreCardPart;
-    expect(match.keyCards).toEqual([club.ace]);
+    expect(match.scoringCards).toEqual([club.ace]);
   });
 
   it('matches the non-pair cards in descending order as the kicker when there are two pairs', () => {
