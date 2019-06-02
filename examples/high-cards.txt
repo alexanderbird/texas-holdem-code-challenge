@@ -1,12 +1,10 @@
-4S 2S 3S 7S 5D
-Alfred 2H 6C
-Becky 3H 9C
-Charles 4H 8C
-Dylan 5H AC
-Edward 6H QC
-Henry 2C KC 
-Illana 3C JC
-Julie 4C TC
+4H 2S 7D 6S 5D
+Becky 9C
+Dylan AC
+Edward QC
+Henry KC 
+Illana JC
+Julie TC
 
 ---
 
@@ -16,5 +14,3 @@ Julie 4C TC
 4 Illana High Card Jack
 5 Julie High Card 10
 6 Becky High Card 9
-7 Charles High Card 8
-8 Alfred High Card 7

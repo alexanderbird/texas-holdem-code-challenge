@@ -2,10 +2,10 @@
 Winnie TC 9C 8H 7H
 Foster TD 9H 8D 6H
 Alvin TS 9D 7C 4C
-Lowrance TH 8C 4H 4D
-Creigh KC QC JH JD
-Cassey KH JC TH TD
-Kalinda KD TC TS 9S
+Lowrance TH 8C 4H 3D
+Creigh KC QC JH TD
+Cassey KH JC TH 9D
+Kalinda KD TC 9S 8S
 
 ---
 
