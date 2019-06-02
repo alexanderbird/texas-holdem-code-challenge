@@ -71,21 +71,3 @@ export interface ParseGameBoard {
 export interface SerializeGameResults {
   (results: PlayerScore[]): string;
 }
-
-/*
-Types of HandRequirements: 
-    highCard(Hand)  { highest card in the set }
-    pair(Hand)      { two cards same number }
-    twoPair(Hand)   { !four(Hand) && UnionHandRequirement(pair, pair, 'Two Pair')(Hand) }
-    three(Hand)     { three cards same number }
-
-    // there is a three, and a pair in the kicker of the three
-    fullHouse(Hand) { UnionHandRequirement(three, pair, 'Full House')(Hand) }
-    four(Hand)      { four cards same number }
-    flush(Hand)     { every card the same suit }
-    straight(Hand)  {
-      when sorted by number, increases in numerical sequence without gaps
-    }
-    straightFlush   { straight(Hand) && flush(Hand) }
-    royalFlush      { straightFlush(Hand) && highCard(Hand).scoringCard === Ace }
-*/
