@@ -1,13 +1,16 @@
 import { HandType } from './hand-type';
-import { highCard } from './hand-requirements/high-card';
-import { pair } from './hand-requirements/pair';
-import { twoPair } from './hand-requirements/two-pair';
-import { straight } from './hand-requirements/straight';
+import * as requirements from './hand-requirements';
 
 let rank = 1;
 export const allHandTypes: HandType[] = [
-  new HandType('High Card' , rank++ , highCard) ,
-  new HandType('Pair'      , rank++ , pair)     ,
-  new HandType('Two Pair'  , rank++ , twoPair)  ,
-  new HandType('Straight'  , rank++ , straight) ,
+  new HandType('Highcard', rank++, requirements.highCard),
+  new HandType('Pair', rank++, requirements.pair),
+  new HandType('Two Pair', rank++, requirements.twoPair),
+  new HandType('Three of a kind', rank++, requirements.three),
+  new HandType('Straight', rank++, requirements.straight),
+  new HandType('Flush', rank++, requirements.flush),
+  new HandType('Full house', rank++, requirements.fullHouse),
+  new HandType('Four of a kind', rank++, requirements.four),
+  new HandType('Straight flush', rank++, requirements.straightFlush),
+  new HandType('Royal flush', rank++, requirements.royalFlush),
 ]

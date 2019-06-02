@@ -9,10 +9,10 @@ Kalinda KD TC 9S 8S
 
 ---
 
-1 Creigh High Card King (kicker Queen)
-2 Cassey High Card King (kicker Jack)
-3 Kalinda High Card King (kicker 10)
-4 Winnie High Card 10 (kicker 9 8 7)
-5 Foster High Card 10 (kicker 9 8 6)
-6 Alvin High Card 10 (kicker 9 7)
-7 Lowrance High Card 10 (kicker 8)
+1 Creigh Highcard King (kicker Queen)
+2 Cassey Highcard King (kicker Jack)
+3 Kalinda Highcard King (kicker 10)
+4 Winnie Highcard 10 (kicker 9 8 7)
+5 Foster Highcard 10 (kicker 9 8 6)
+6 Alvin Highcard 10 (kicker 9 7)
+7 Lowrance Highcard 10 (kicker 8)

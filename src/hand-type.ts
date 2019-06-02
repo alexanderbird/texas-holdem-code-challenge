@@ -47,9 +47,9 @@ class HandClassification implements HandClassificationInterface {
     const relevantKicker = this.kicker.slice(0, numberOfKickerCards);
     let kickerString = '';
     if(relevantKicker.length) {
-      kickerString = ` (kicker ${relevantKicker.map(c => c.valueString()).join(' ')})`;
+      kickerString = `(kicker ${relevantKicker.map(c => c.valueString()).join(' ')})`;
     }
-    return `${this.name} ${scoringCardsString}${kickerString}`;
+    return [this.name, scoringCardsString, kickerString].filter(s => !!s).join(' ');
   }
 
   private allCardValues(): number[] {

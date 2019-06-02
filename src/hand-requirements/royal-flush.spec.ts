@@ -18,19 +18,19 @@ describe('royalFlush', () => {
   });
 
   it('returns false when straightFlush matches but the scoring card is not an ace', () => {
-    straightFlush.and.returnValue({ scoringCards: [ club.eight ] });
+    straightFlush.and.returnValue({ scoringCards: [ club.king ] });
     expect(royalFlush(hand)).toEqual(false);
   });
 
-  it('returns the straightFlush match result when the scoring card is an ace', () => {
+  it('matches when the scoring card is an ace', () => {
     straightFlush.and.returnValue({ scoringCards: [ club.ace ] });
     expect(royalFlush(hand)).toBeTruthy();
   });
 
-  it('returns the HandMatch that straightFlush returns when it matches', () => {
+  it('matches with no scoring cards or kicker returns when it matches', () => {
     const straightFlushMatch = { scoringCards: [ spade.ace ], kicker: [] };
     straightFlush.and.returnValue(straightFlushMatch);
-    expect(royalFlush(hand)).toBe(straightFlushMatch);
+    expect(royalFlush(hand)).toEqual({ scoringCards: [], kicker: [] });
   });
 
   it('passes the hand to the straightFlush requirement', () => {
@@ -42,13 +42,13 @@ describe('royalFlush', () => {
   it('matches club 10,J,K,Q,A', () => {
     straightFlush.and.callThrough();
     const match = royalFlush([ club.jack, club.king, club.ten, club.ace, club.queen ]);
-    expect(match).toEqual({ scoringCards: [ club.ace ], kicker: [] });
+    expect(match).toEqual({ scoringCards: [], kicker: [] });
   });
 
   it('matches spade 10,J,K,Q,A', () => {
     straightFlush.and.callThrough();
     const match = royalFlush([ spade.ace, spade.king, spade.ten, spade.queen, spade.jack ]);
-    expect(match).toEqual({ scoringCards: [ spade.ace ], kicker: [] });
+    expect(match).toEqual({ scoringCards: [], kicker: [] });
   });
 
   it('does not match A,2,3,4,5', () => {

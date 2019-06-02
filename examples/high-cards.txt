@@ -8,9 +8,9 @@ Julie TC
 
 ---
 
-1 Dylan High Card Ace
-2 Henry High Card King
-3 Edward High Card Queen
-4 Illana High Card Jack
-5 Julie High Card 10
-6 Becky High Card 9
+1 Dylan Highcard Ace
+2 Henry Highcard King
+3 Edward Highcard Queen
+4 Illana Highcard Jack
+5 Julie Highcard 10
+6 Becky Highcard 9
