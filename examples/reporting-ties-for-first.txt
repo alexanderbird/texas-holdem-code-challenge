@@ -1,0 +1,12 @@
+2C 4C 6C 8S TS
+Lexine 3D AS
+Laney 3C KC
+Francois 3H AH
+Evelin 3S JH
+
+---
+
+2 Lexine High Card Ace (kicker 10 8 6 4)
+2 Francois High Card Ace (kicker 10 8 6 4)
+3 Laney High Card King
+4 Evelin High Card Jack

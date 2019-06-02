@@ -1,0 +1,14 @@
+2C 4C 6C 8D
+Helli AS 3C
+Leese QC 3D
+Ariel QD 3H
+Mari QH 3S
+Darcy TC 5C
+
+---
+
+1 Helli High Card Ace
+4 Leese High Card Queen (kicker 8 6 4 3)
+4 Ariel High Card Queen (kicker 8 6 4 3)
+4 Mari High Card Queen (kicker 8 6 4 3)
+5 Darcy High Card 10
