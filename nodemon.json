@@ -1,6 +1,6 @@
 {
   "verbose": true,
   "exec": "npm run check",
-  "ext": "ts",
+  "ext": "ts,txt",
   "watch": "src"
 }
