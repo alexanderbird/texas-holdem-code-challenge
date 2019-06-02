@@ -87,6 +87,37 @@ describe('HandType', () => {
         });
       });
 
+      type CondensedClassification = [number, number[], number[]];
+      type C = CondensedClassification;
+      describe('howManyKickerCardsAreRelevant', () => {
+        [
+          { thisOne: [2, [ ], [     ]] as C, otherOne: [1, [ ], [     ]] as C, howMany: 0 },
+          { thisOne: [2, [ ], [     ]] as C, otherOne: [2, [ ], [     ]] as C, howMany: Infinity },
+          { thisOne: [2, [2], [     ]] as C, otherOne: [2, [1], [     ]] as C, howMany: 0 },
+          { thisOne: [2, [2], [2    ]] as C, otherOne: [2, [2], [1    ]] as C, howMany: 1 },
+          { thisOne: [2, [2], [2    ]] as C, otherOne: [2, [2], [2    ]] as C, howMany: Infinity },
+          { thisOne: [2, [2], [2,2  ]] as C, otherOne: [2, [2], [2,1  ]] as C, howMany: 2 },
+          { thisOne: [2, [2], [2,2  ]] as C, otherOne: [2, [2], [2,2  ]] as C, howMany: Infinity },
+          { thisOne: [2, [2], [2,2,2]] as C, otherOne: [2, [2], [2,2,1]] as C, howMany: 3 },
+        ].forEach(({ thisOne, otherOne, howMany }) => {
+          function getClassification([rank, scoringValues, kickerValues ]: CondensedClassification): HandClassification {
+            const handType = new HandType('', rank, requirement);
+            requirement.and.returnValue({
+              scoringCards: scoringValues.map(value => ({ value })),
+              kicker: kickerValues.map(value => ({ value })),
+            });
+            return handType.matches([]) as HandClassification;
+          }
+
+          it(`returns ${howMany} when the {rank, [scoring], [kicker]} is ${JSON.stringify(thisOne)} and ${JSON.stringify(otherOne)}`, () => {
+            const thisClassification = getClassification(thisOne);
+            const otherClassification = getClassification(otherOne);
+            const result = thisClassification.howManyKickerCardsAreRelevant(otherClassification);
+            expect(result).toEqual(howMany);
+          });
+        });
+      });
+
       describe('serializeToSort', () => {
         [
           { expected: '222222' ,  rank: 2  ,  scoringCards: [2,2]  ,  kicker: [2,2,2] },

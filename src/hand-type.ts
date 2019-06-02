@@ -19,16 +19,26 @@ class HandClassification implements HandClassificationInterface {
     this.checkValuesAreBelowLimit();
   }
 
+  public howManyKickerCardsAreRelevant(other: HandClassification): number {
+    const values = this.allValues();
+    const otherValues = other.allValues();
+    const numberOfRankValues = 1;
+    const numberOfValuesExcludingKicker = this.scoringCards.length + numberOfRankValues;
+    let equalSoFar = true;
+    let numberOfKickerCardsUsed = 0;
+    for(let i = 0; i < values.length; i++) {
+      equalSoFar = equalSoFar && values[i] === otherValues[i]; 
+      if(equalSoFar) {
+        if(i >= numberOfValuesExcludingKicker - 1) {
+          numberOfKickerCardsUsed += 1; 
+        }
+      }
+    }
+    return equalSoFar ? Infinity : numberOfKickerCardsUsed;
+  }
+
   public serializeToSort(): string {
-    const cardValues = [
-      ...this.scoringCards.map(c => c.value),
-      ...this.kicker.map(c => c.value),
-    ];
-    const values = [
-      this.rank,
-      ...cardValues.map(v => v === 1 ? 14 : v),
-    ];
-    const hexValues = values.map(n => n.toString(16));
+    const hexValues = this.allValues().map(n => n.toString(16));
     return hexValues.join('');
   }
 
@@ -40,6 +50,20 @@ class HandClassification implements HandClassificationInterface {
       kickerString = ` (kicker ${relevantKicker.map(c => c.valueString()).join(' ')})`;
     }
     return `${this.name} ${scoringCardsString}${kickerString}`;
+  }
+
+  private allCardValues(): number[] {
+    return [
+      ...this.scoringCards.map(c => c.value),
+      ...this.kicker.map(c => c.value),
+    ];
+  }
+
+  private allValues(): number[] {
+    return [
+      this.rank,
+      ...this.allCardValues().map(v => v === 1 ? 14 : v),
+    ];
   }
 
   private checkValuesAreBelowLimit(): void {

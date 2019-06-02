@@ -44,6 +44,11 @@ export interface HandClassification {
   //   description: string;
   //   rank: number;
   //   cardPart: HandClassificationCardPart;
+  
+  // Returns the number of kicker cards required to distinguish from the other.
+  // Returns Infinity if the other is the same.
+  // Returns 0 if the other can be distinguished without looking at the kicker.
+  howManyKickerCardsAreRelevant(other: HandClassification): number;
 
   // validate that all numbers are less than 1 hexit, base 16 encode in order:
   // rank, scoringCards, kicker

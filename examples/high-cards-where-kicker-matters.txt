@@ -1,0 +1,18 @@
+2C
+Winnie TC 9C 8H 7H
+Foster TD 9H 8D 6H
+Alvin TS 9D 7C 4C
+Lowrance TH 8C 4H 4D
+Creigh KC QC JH JD
+Cassey KH JC TH TD
+Kalinda KD TC TS 9S
+
+---
+
+1 Creigh High Card King (kicker Queen)
+2 Cassey High Card King (kicker Jack)
+3 Kalinda High Card King (kicker 10)
+4 Winnie High Card 10 (kicker 9 8 7)
+5 Foster High Card 10 (kicker 9 8 6)
+6 Alvin High Card 10 (kicker 9 7)
+7 Lowrance High Card 10 (kicker 8)
