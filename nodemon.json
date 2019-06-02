@@ -2,5 +2,8 @@
   "verbose": true,
   "exec": "npm run check",
   "ext": "ts,txt",
-  "watch": "src"
+  "watch": [
+    "src",
+    "examples"
+  ]
 }
