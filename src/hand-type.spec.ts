@@ -36,11 +36,55 @@ describe('HandType', () => {
 
     describe('returns HandClassification', () => {
       describe('serializeForHumans', () => {
-        it('includes the name and scoring cards\' names when the precision is 0');
-        it('includes the name and scoring cards\' names when the precision is 1 and there are no kickers');
-        it('includes the name, scoring cards\' names, and the first kicker name when the precision is 1 and there are many kickers');
-        it('includes the name, scoring cards\' names, and the first kicker name when the precision is 2 and there is one kicker');
-        it('includes the name, scoring cards\' names, and the first two kickers\' names when the precision is 2 and ther are many kickers');
+        it('includes the name and scoring cards\' names when the precision is 0', () => {
+          requirement.and.returnValue({
+            scoringCards: [ spade.ace, club.two ],
+            kicker: [ heart.four ],
+          });
+          const handType = new HandType('Wowza', 3, requirement);
+          const classification = handType.matches(hand) as HandClassification;
+          expect(classification.serializeForHumans(0)).toEqual('Wowza Ace 2');
+        });
+
+        it('includes the name and scoring cards\' names when the precision is 1 and there are no kickers', () => {
+          requirement.and.returnValue({
+            scoringCards: [ diamond.seven, diamond.three ],
+            kicker: [],
+          });
+          const handType = new HandType('Strong Hand', 3, requirement);
+          const classification = handType.matches(hand) as HandClassification;
+          expect(classification.serializeForHumans(1)).toEqual('Strong Hand 7 3');
+        });
+
+        it('includes the name, scoring cards\' names, and the first kicker name when the precision is 1 and there are many kickers', () => {
+          requirement.and.returnValue({
+            scoringCards: [ heart.queen ],
+            kicker: [ spade.jack, spade.ten, spade.five ],
+          });
+          const handType = new HandType('Greatness', 3, requirement);
+          const classification = handType.matches(hand) as HandClassification;
+          expect(classification.serializeForHumans(1)).toEqual('Greatness Queen (kicker Jack)');
+        });
+
+        it('includes the name, scoring cards\' names, and the first kicker name when the precision is 2 and there is one kicker', () => {
+          requirement.and.returnValue({
+            scoringCards: [ heart.queen ],
+            kicker: [ spade.ace ],
+          });
+          const handType = new HandType('Nifty', 3, requirement);
+          const classification = handType.matches(hand) as HandClassification;
+          expect(classification.serializeForHumans(2)).toEqual('Nifty Queen (kicker Ace)');
+        });
+
+        it('includes the name, scoring cards\' names, and the first two kickers\' names when the precision is 2 and ther are many kickers', () => {
+          requirement.and.returnValue({
+            scoringCards: [ club.king, club.three, club.two ],
+            kicker: [ spade.jack, spade.ten, spade.five ],
+          });
+          const handType = new HandType('Big', 3, requirement);
+          const classification = handType.matches(hand) as HandClassification;
+          expect(classification.serializeForHumans(2)).toEqual('Big King 3 2 (kicker Jack 10)');
+        });
       });
 
       describe('serializeToSort', () => {
