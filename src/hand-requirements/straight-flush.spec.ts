@@ -53,4 +53,25 @@ describe('straightFlush', () => {
     flush.and.returnValue({});
     expect(straightFlush(hand)).toBe(matchFromStraight);
   });
+
+  it('matches club 6,7,8,9,10', () => {
+    straight.and.callThrough();
+    flush.and.callThrough();
+    const match = straightFlush([ club.six, club.seven, club.ten, club.eight, club.nine ]);
+    expect((match as HandMatch).scoringCards).toEqual([ club.ten ]);
+  });
+
+  it('does not match club 6,7,8,9,J', () => {
+    straight.and.callThrough();
+    flush.and.callThrough();
+    const match = straightFlush([ club.six, club.seven, club.jack, club.eight, club.nine ]);
+    expect(match).toEqual(false);
+  });
+
+  it('does not match C6,C7,S8,C9,C10', () => {
+    straight.and.callThrough();
+    flush.and.callThrough();
+    const match = straightFlush([ club.six, club.seven, club.ten, spade.eight, club.nine ]);
+    expect(match).toEqual(false);
+  });
 });
