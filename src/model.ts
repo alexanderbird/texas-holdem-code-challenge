@@ -34,22 +34,32 @@ export interface HandRequirement {
   (hand: Hand): PossibleHandMatch;
 }
 
+export interface HandComparisonResult {
+  relationship: -1 | 0 | 1;
+  kickersUsed: number;
+}
+
 export interface HandClassification {
-  cardPart: HandClassificationCardPart;
-  rank: number;
-  description: string;
+  // to constructor:
+  //   description: string;
+  //   rank: number;
+  //   cardPart: HandClassificationCardPart;
 
-  // result must be compatible with Array#sort
-  compareTo(other: HandClassification): -1 | 0 | 1;
+  // validate that all numbers are less than 1 hexit, base 16 encode in order:
+  // rank, scoringCards, kicker
+  serializeToSort(): string;
 
-  // based on description and all of cardPart
-  toString(): string;
+  // based on description and all of cardPart. 
+  // numberOfKickerCards tells how much detail to add
+  serializeForHumans(numberOfKickerCards: number): string;
 }
 
 export interface HandType {
-  name: string;
-  rank: number;
-  requirement: HandRequirement;
+  // to constructor:
+  //   name: string;
+  //   rank: number;
+  //   requirement: HandRequirement;
+
   // If the hand matches the HandRequirement, augment the HandClassificationCardPart
   // with the rank and name. 
   // To generate the HandClassification description, HandType will need to use the name
