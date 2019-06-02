@@ -1,0 +1,20 @@
+4S 2S 3S 7S 5D
+Alfred 2H 6C
+Becky 3H 9C
+Charles 4H 8C
+Dylan 5H AC
+Edward 6H QC
+Henry 2C KC 
+Illana 3C JC
+Julie 4C TC
+
+---
+
+1 Dylan High Card Ace
+2 Henry High Card King
+3 Edward High Card Queen
+4 Illana High Card Jack
+5 Julie High Card 10
+6 Becky High Card 9
+7 Charles High Card 8
+8 Alfred High Card 7

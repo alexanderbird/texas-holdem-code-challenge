@@ -74,10 +74,17 @@ export interface PlayerScore {
   toString(): string;
 }
 
+export interface PlayerHandClassification {
+  player: Player;
+  handClassification: HandClassification;
+}
+
 export interface ParseGameBoard {
   (raw: string): GameBoard;
 }
 
+export type GameResults = PlayerHandClassification[];
+
 export interface SerializeGameResults {
-  (results: PlayerScore[]): string;
+  (gameResults: GameResults): string;
 }

@@ -89,10 +89,11 @@ describe('HandType', () => {
 
       describe('serializeToSort', () => {
         [
-          { expected: '111111' ,  rank: 1  ,  scoringCards: [1,1]  ,  kicker: [1,1,1] },
+          { expected: '222222' ,  rank: 2  ,  scoringCards: [2,2]  ,  kicker: [2,2,2] },
           { expected: '999999' ,  rank: 9  ,  scoringCards: [9,9]  ,  kicker: [9,9,9] },
-          { expected: '123456' ,  rank: 1  ,  scoringCards: [2,3]  ,  kicker: [4,5,6] },
-          { expected: '1'      ,  rank: 1  ,  scoringCards: []     ,  kicker: [] },
+          { expected: '234567' ,  rank: 2  ,  scoringCards: [3,4]  ,  kicker: [5,6,7] },
+          { expected: '2'      ,  rank: 2  ,  scoringCards: []     ,  kicker: [] },
+          { expected: '1eeeee' ,  rank: 1  ,  scoringCards: [1,1]  ,  kicker: [1,1,1] },
           { expected: 'f9b9ac' ,  rank: 15 ,  scoringCards: [9,11] ,  kicker: [9,10,12] },
         ].forEach(({ expected, rank, scoringCards, kicker }) => {
           it(`returns '${expected}' given ${JSON.stringify({ rank, scoringCards, kicker })}`, () => {

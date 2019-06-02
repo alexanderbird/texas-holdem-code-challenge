@@ -20,10 +20,13 @@ class HandClassification implements HandClassificationInterface {
   }
 
   public serializeToSort(): string {
-    const values = [
-      this.rank,
+    const cardValues = [
       ...this.scoringCards.map(c => c.value),
       ...this.kicker.map(c => c.value),
+    ];
+    const values = [
+      this.rank,
+      ...cardValues.map(v => v === 1 ? 14 : v),
     ];
     const hexValues = values.map(n => n.toString(16));
     return hexValues.join('');
