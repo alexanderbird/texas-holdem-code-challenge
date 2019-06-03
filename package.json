@@ -2,9 +2,11 @@
   "name": "arterys-code-challenge",
   "version": "0.0.1",
   "description": "Solution to the Arterys Texas Hold'em programming challenge",
-  "main": "node/index.js",
+  "main": "dist/cli.js",
   "repository": "https://github.com/alexanderbird/arterys-code-challenge.git",
   "scripts": {
+    "start": "node $npm_package_main",
+    "build": "tsc",
     "test": "ts-node node_modules/jasmine/bin/jasmine --config=spec/support/jasmine.json",
     "lint": "eslint src/**/*.ts",
     "check": "run-s test lint",

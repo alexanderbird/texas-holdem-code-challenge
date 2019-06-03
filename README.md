@@ -1,5 +1,10 @@
 # Arterys Texas Hold'em Programming Exercise
 
+## Build & run
+
+    npm run build
+    npm start
+
 ## Developer Setup
 - Node.js >= 11.7.x
 
