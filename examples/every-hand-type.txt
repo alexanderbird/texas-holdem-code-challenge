@@ -9,16 +9,3 @@ Trixy 3D 5D AC 8H
 Krissy AS QS JS TS
 Puff 3C 3H 3D 5C
 Damita KC KH KD 2D
-
----
-
-1 Krissy Royal flush
-2 Annalee Straight flush 6
-3 Damita Four of a kind King
-4 Erminie Full house 4 7
-5 Lynde Flush 9
-6 Trixy Straight 5
-7 Puff Three of a kind 3
-8 Rachel Two Pair 10 8
-9 Devon Pair 4
-10 Brittany Highcard Ace

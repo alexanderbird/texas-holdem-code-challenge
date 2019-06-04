@@ -11,7 +11,7 @@ import { allHandTypes } from './all-hand-types';
 import { serializeGameResults } from './serialize-game-results';
 
 export function scorePokerHands(input: string): string {
-  const board = parseGameBoard(input);
+  const board = parseGameBoard(input.trim());
   const playerHandClassifications: PlayerHandClassification[] = [];
   board.playerHands.forEach(playerHand => {
     const availableCards = [ ...board.communityCards, ...playerHand.hand ];

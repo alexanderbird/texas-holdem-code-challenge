@@ -1,0 +1,5 @@
+1 Helli Highcard Ace
+4 Leese Highcard Queen (kicker 8 6 4 3)
+4 Ariel Highcard Queen (kicker 8 6 4 3)
+4 Mari Highcard Queen (kicker 8 6 4 3)
+5 Darcy Highcard 10

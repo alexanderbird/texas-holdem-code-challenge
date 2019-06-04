@@ -3,10 +3,3 @@ Lexine 3D AS
 Laney 3C KS
 Francois 3H AH
 Evelin 3S JH
-
----
-
-2 Lexine Highcard Ace (kicker 10 8 6 4)
-2 Francois Highcard Ace (kicker 10 8 6 4)
-3 Laney Highcard King
-4 Evelin Highcard Jack
