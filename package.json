@@ -8,7 +8,7 @@
     "start": "node $npm_package_main",
     "build": "tsc --project tsconfig.cli.json",
     "test": "ts-node node_modules/jasmine/bin/jasmine --config=spec/support/jasmine.json",
-    "lint": "eslint src/**/*.ts",
+    "lint": "eslint src/**/*.ts src/*.ts",
     "check": "run-s test lint",
     "watch": "nodemon"
   },

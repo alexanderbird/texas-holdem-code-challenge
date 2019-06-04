@@ -1,4 +1,4 @@
-import { Suit } from './suit';
+import { Suit } from './ranking-helpers/suit';
 export interface Player {
   name: string;
 }
