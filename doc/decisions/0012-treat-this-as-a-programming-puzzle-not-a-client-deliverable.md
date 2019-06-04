@@ -6,6 +6,8 @@ Date: 2019-06-03
 
 Accepted
 
+Extended by [13. Show no kickers for ties](0013-show-no-kickers-for-ties.md)
+
 ## Context
 
 Based on the instructions, this is a "Programming Exercise" and the solution

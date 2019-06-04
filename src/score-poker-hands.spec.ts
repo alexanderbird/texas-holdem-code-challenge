@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync } from 'fs';
+import { readdirSync, readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 import { scorePokerHands } from './score-poker-hands';
 
@@ -11,9 +11,15 @@ describe('scorePokerHands', () => {
     if(!fixtureNameMatch) return;
     const fixtureName = fixtureNameMatch[1];
     const input = readFileSync(join(fixturePath, fixtureFileName)).toString();
-    const output = readFileSync(join(fixturePath, expectedFixtureSubdirectory, fixtureFileName)).toString();
-    it(`correctly scores the "${fixtureName.replace('-', ' ')}" example game`, () => {
-      expect(scorePokerHands(input)).toEqual(output);
+    const outputFilePath = join(fixturePath, expectedFixtureSubdirectory, fixtureFileName);
+    it(`correctly scores the "${fixtureName.replace(/-/g, ' ')}" example game`, () => {
+      const expectedOutputDefined = existsSync(outputFilePath);
+      if(!expectedOutputDefined) {
+        pending(`Expected output not defined (looked in ${outputFilePath})`);
+      } else {
+        const output = readFileSync(outputFilePath).toString();
+        expect(scorePokerHands(input)).toEqual(output);
+      }
     });
   });
 });

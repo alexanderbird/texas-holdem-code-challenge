@@ -1,0 +1,6 @@
+2 Thebault Two Pair 10 8
+2 Shela Two Pair 10 8
+3 Orran Two Pair 8 6
+4 Cheater Two Pair 6 4 (kicker Queen)
+5 Lemuel Two Pair 6 4 (kicker 10)
+6 Bren Two Pair 6 2

@@ -5,7 +5,8 @@ function serializeOneLine(
   rankString: string,
   numberOfRelevantKickers: number
 ): string {
-  return `${rankString} ${player.name} ${handClassification.serializeForHumans(numberOfRelevantKickers)}\n`;
+  const kickersToInclude = numberOfRelevantKickers === Infinity ? 0 : numberOfRelevantKickers;
+  return `${rankString} ${player.name} ${handClassification.serializeForHumans(kickersToInclude)}\n`;
 }
 
 interface KickerSummary {
