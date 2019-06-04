@@ -4,7 +4,7 @@
 4 Erminie Full House 4 7
 5 Lynde Flush 9
 6 Trixy Straight 5
-7 Puff Three of a kind 3
+7 Puff Three of a Kind 3
 8 Rachel Two Pair 10 8
 9 Devon Pair 4
 10 Brittany Highcard Ace

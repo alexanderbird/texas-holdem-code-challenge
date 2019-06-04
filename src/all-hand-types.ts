@@ -6,7 +6,7 @@ export const allHandTypes: HandType[] = [
   new HandType('Highcard', rank++, requirements.highCard),
   new HandType('Pair', rank++, requirements.pair),
   new HandType('Two Pair', rank++, requirements.twoPair),
-  new HandType('Three of a kind', rank++, requirements.three),
+  new HandType('Three of a Kind', rank++, requirements.three),
   new HandType('Straight', rank++, requirements.straight),
   new HandType('Flush', rank++, requirements.flush),
   new HandType('Full House', rank++, requirements.fullHouse),
