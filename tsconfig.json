@@ -1,19 +1,6 @@
 {
-  "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "src/**/*.spec.ts"
-  ],
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
     "typeRoots" : ["./node_modules/@types"],
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "types": ["node"],
-    "esModuleInterop": true,
-    "sourceMap": true,
     "lib": [
       "es2018"
     ]
