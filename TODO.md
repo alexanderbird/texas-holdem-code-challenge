@@ -1,5 +1,4 @@
 # TODO
- - handle whitespace other than the space character
  - add unit tests for distinguishing between tricky ranking situations
   - for each hand type, using the scoring cards to distinguish
   - for each hand type, using kicker to distinguish

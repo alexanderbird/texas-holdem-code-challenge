@@ -66,4 +66,18 @@ describe('parseGameBoard', () => {
       ]
     });
   });
+
+  it(`parses the game board correctly when tabs are used instead of spaces`, () => {
+    const board = parseGameBoard('2C	2H	2D	2S	3C\nCordell	3H	3D');
+    expect(board).toEqual({
+      communityCards: [ club.two, heart.two, diamond.two, spade.two, club.three ],
+      playerHands: [
+        {
+          player: { name: 'Cordell' },
+          hand: [ heart.three, diamond.three ],
+        },
+      ]
+    });
+  });
+
 });
