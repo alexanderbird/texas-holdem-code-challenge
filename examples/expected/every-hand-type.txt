@@ -1,5 +1,5 @@
-1 Krissy Royal flush
-2 Annalee Straight flush 6
+1 Krissy Royal Flush
+2 Annalee Straight Flush 6
 3 Damita Four of a Kind King
 4 Erminie Full House 4 7
 5 Lynde Flush 9
