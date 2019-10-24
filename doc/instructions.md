@@ -1,11 +1,10 @@
-## Arterys Texas Hold'em Programming Exercise
+## Texas Hold'em Programming Exercise
 ### Problem
 
 Write a program that can identify and rank [Texas
 Hold'em](https://en.wikipedia.org/wiki/Texas_hold_'em) poker hands.  Your code
 should be **production** level.  C++ or node.js are preferred, however you can
-use any language you desire.  Your program should run on a *nix system.  If you
-have questions please contact darryl@arterys.com.
+use any language you desire.  Your program should run on a *nix system. 
 
 ### Specifications
 - Your program should read the community cards and each player's hand from stdin.

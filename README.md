@@ -1,4 +1,4 @@
-# Arterys Texas Hold'em Programming Exercise
+# Texas Hold'em Programming Exercise
 
 ## System Requirements
 
